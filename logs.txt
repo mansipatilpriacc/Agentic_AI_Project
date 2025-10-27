@@ -1,0 +1,102 @@
+[2025-10-27 14:38:51] ResearchAgent:
+[{'title': 'Artificial intelligence in healthcare', 'summary': 'Artificial intelligence in healthcare is the application of artificial intelligence (AI) to analyze and understand complex medical and healthcare data. In some cases, it can exceed or augment human capabilities by providing better or faster ways to diagnose, treat, or prevent disease.\nAs the widespread use of artificial intelligence in healthcare is still relatively new, research is ongoing into its applications across various medical subdisciplines and related industries. AI programs are being ', 'url': 'https://en.wikipedia.org/wiki/Artificial_intelligence_in_healthcare'}]
+
+[2025-10-27 14:38:51] WriterAgent:
+ERROR: Traceback (most recent call last):
+  File "c:\users\pc\onedrive\desktop\orchestrator.py", line 95, in main
+    draft_article = writer_agent.write_article(topic, research_results)
+  File "C:\Users\pc\OneDrive\Desktop\writer_agent.py", line 18, in write_article
+    return self.llm(prompt)
+           ~~~~~~~~^^^^^^^^
+TypeError: 'OpenAI' object is not callable
+
+
+[2025-10-27 14:41:55] ResearchAgent:
+[{'title': 'Artificial intelligence in healthcare', 'summary': 'Artificial intelligence in healthcare is the application of artificial intelligence (AI) to analyze and understand complex medical and healthcare data. In some cases, it can exceed or augment human capabilities by providing better or faster ways to diagnose, treat, or prevent disease.\nAs the widespread use of artificial intelligence in healthcare is still relatively new, research is ongoing into its applications across various medical subdisciplines and related industries. AI programs are being ', 'url': 'https://en.wikipedia.org/wiki/Artificial_intelligence_in_healthcare'}]
+
+[2025-10-27 14:42:00] WriterAgent:
+ERROR: Traceback (most recent call last):
+  File "c:\users\pc\onedrive\desktop\orchestrator.py", line 95, in main
+    draft_article = writer_agent.write_article(topic, research_results)
+  File "C:\Users\pc\OneDrive\Desktop\writer_agent.py", line 23, in write_article
+    response = self.llm.invoke(prompt)
+  File "C:\Users\pc\AppData\Roaming\Python\Python313\site-packages\langchain_core\language_models\llms.py", line 370, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\pc\AppData\Roaming\Python\Python313\site-packages\langchain_core\language_models\llms.py", line 769, in generate_prompt
+    return self.generate(prompt_strings, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pc\AppData\Roaming\Python\Python313\site-packages\langchain_core\language_models\llms.py", line 986, in generate
+    return self._generate_helper(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        prompts,
+        ^^^^^^^^
+    ...<3 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\pc\AppData\Roaming\Python\Python313\site-packages\langchain_core\language_models\llms.py", line 795, in _generate_helper
+    self._generate(
+    ~~~~~~~~~~~~~~^
+        prompts,
+        ^^^^^^^^
+    ...<3 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\pc\AppData\Roaming\Python\Python313\site-packages\langchain_openai\llms\base.py", line 456, in _generate
+    response = self.client.create(prompt=_prompts, **params)
+  File "C:\Users\pc\AppData\Roaming\Python\Python313\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\pc\AppData\Roaming\Python\Python313\site-packages\openai\resources\completions.py", line 541, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/completions",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[Completion],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\pc\AppData\Roaming\Python\Python313\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pc\AppData\Roaming\Python\Python313\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+
+
+[2025-10-27 14:54:03] ResearchAgent:
+[{'title': 'Artificial intelligence in healthcare', 'summary': 'Artificial intelligence in healthcare is the application of artificial intelligence (AI) to analyze and understand complex medical and healthcare data. In some cases, it can exceed or augment human capabilities by providing better or faster ways to diagnose, treat, or prevent disease.\nAs the widespread use of artificial intelligence in healthcare is still relatively new, research is ongoing into its applications across various medical subdisciplines and related industries. AI programs are being ', 'url': 'https://en.wikipedia.org/wiki/Artificial_intelligence_in_healthcare'}]
+
+[2025-10-27 14:54:03] WriterAgent:
+[Dummy Article] This is a placeholder article for: Write about 'Benefits of AI in healthcare' using t...
+
+[2025-10-27 14:54:03] CriticAgent:
+ERROR: Traceback (most recent call last):
+  File "c:\users\pc\onedrive\desktop\orchestrator.py", line 109, in main
+    critique_output = critic_agent.critique(draft_article)
+  File "C:\Users\pc\OneDrive\Desktop\critic_agent.py", line 16, in critique
+    return self.llm(prompt)
+           ~~~~~~~~^^^^^^^^
+TypeError: 'OpenAI' object is not callable
+
+
+[2025-10-27 14:56:12] ResearchAgent:
+[{'title': 'Artificial intelligence in healthcare', 'summary': 'Artificial intelligence in healthcare is the application of artificial intelligence (AI) to analyze and understand complex medical and healthcare data. In some cases, it can exceed or augment human capabilities by providing better or faster ways to diagnose, treat, or prevent disease.\nAs the widespread use of artificial intelligence in healthcare is still relatively new, research is ongoing into its applications across various medical subdisciplines and related industries. AI programs are being ', 'url': 'https://en.wikipedia.org/wiki/Artificial_intelligence_in_healthcare'}]
+
+[2025-10-27 14:56:12] WriterAgent:
+[Dummy Article] This is a placeholder article for: Write about 'Benefits of AI in healthcare' using t...
+
+[2025-10-27 14:56:16] CriticAgent:
+[CriticAgent ERROR] Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+
